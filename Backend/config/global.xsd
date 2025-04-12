@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <!-- Root -->
+  <xs:element name="Schema">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Participants" type="ParticipantsType"/>
+        <xs:element name="Projects" type="ProjectsType"/>
+        <xs:element name="Teams" type="TeamsType"/>
+      </xs:choice>
+
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Participants -->
+  <xs:complexType name="ParticipantsType">
+    <xs:sequence>
+      <xs:element name="Participant" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Skills" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Skill" type="xs:string" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="AssignedTeam" type="xs:string" minOccurs="0"/>
+          </xs:sequence>
+          <xs:attribute name="id" type="xs:string" use="optional"/>
+          <xs:attribute name="name" type="xs:string" use="optional"/>
+          <xs:attribute name="email" type="xs:string" use="optional"/>
+          <xs:attribute name="experience" type="xs:decimal" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Projects -->
+  <xs:complexType name="ProjectsType">
+    <xs:sequence>
+      <xs:element name="Project" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="RequiredSkills" minOccurs="0">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Skill" type="xs:string" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="id" type="xs:string" use="optional"/>
+          <xs:attribute name="name" type="xs:string" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!-- Teams -->
+  <xs:complexType name="TeamsType">
+    <xs:sequence>
+      <xs:element name="Team" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="WorksOn" minOccurs="0">
+              <xs:complexType>
+                <xs:attribute name="projectId" type="xs:string" use="optional"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="teamId" type="xs:string" use="optional"/>
+          <xs:attribute name="teamName" type="xs:string" use="optional"/>
+          <xs:attribute name="teamSize" type="xs:int" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

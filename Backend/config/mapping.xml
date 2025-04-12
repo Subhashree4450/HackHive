@@ -1,0 +1,39 @@
+<Mapping>
+    <MongoDB>
+        <Collection name="participants">
+            <Field name="id" type="string"/>
+            <Field name="name" type="string"/>
+            <Field name="email" type="string"/>
+            <Field name="skills" type="array"/>
+            <Field name="experience" type="number"/>
+            <Field name="assigned_team" type="string"/>  
+        </Collection>
+    </MongoDB>
+
+    <Neo4j>
+        <Node label="Project">
+            <Property name="id" type="string"/>
+            <Property name="name" type="string"/>
+            <Property name="requiredSkills" type="array"/>
+            <Property name="teamSize" type="number"/>
+        </Node>
+
+        <Node label="Team">
+            <Property name="teamId" type="string"/>
+            <Property name="teamName" type="string"/>
+            <Property name="teamSize" type="number"/>
+        </Node>
+    </Neo4j>
+
+    <Relationships>
+        <Relationship type="BELONGS_TO">
+            <From collection="Participants" field="id"/>
+            <To label="Team" field="teamId"/>
+        </Relationship>
+
+        <Relationship type="WORKS_ON">
+            <From label="Team" field="teamId"/>
+            <To label="Project" field="id"/>
+        </Relationship>
+    </Relationships>
+</Mapping>

@@ -1,0 +1,87 @@
+.container-sections {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.section {
+  flex: 1 1 48%;
+  background-color: #f9fafb;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Input fields in a row - form uses 70% of container width */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 70%;
+  margin-bottom: 20px;
+}
+
+.input {
+  flex: 1 1 180px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #fff;
+  transition: border-color 0.2s ease-in-out;
+  color:black;
+}
+
+
+.input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.btn {
+  background-color: #2563eb;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-edit {
+  margin-right: 6px;
+  padding: 6px 10px;
+  background-color: #facc15;
+  color: #000;
+  border-radius: 4px;
+}
+
+.btn-delete {
+  padding: 6px 10px;
+  background-color: #ef4444;
+  color: white;
+  border-radius: 4px;
+}
+
+/* Responsive stack layout for small screens */
+@media (max-width: 768px) {
+  .container-sections {
+    flex-direction: column;
+  }
+
+  .section {
+    width: 100%;
+  }
+
+  .form-row {
+    width: 100%;
+  }
+}

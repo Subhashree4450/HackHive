@@ -1,0 +1,111 @@
+/* Layout */
+.datafetcher-wrapper {
+    display: flex;
+    gap: 32px;
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: sans-serif;
+  }
+  
+  /* Left Side - Checkbox Panel */
+  .datafetcher-sidebar {
+    flex: 1;
+    max-width: 200px;
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #f9fafb;
+  }
+  
+  .datafetcher-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .datafetcher-group {
+    margin-bottom: 20px;
+  }
+  
+  .datafetcher-group-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+  }
+  
+  /* Fetch Button */
+  .fetch-button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .fetch-button:hover {
+    background-color: #1e40af;
+  }
+  
+  .datafetcher-content {
+    flex: 2;
+    display: flex;
+    flex-wrap: nowrap; /* prevent wrapping */
+    gap: 70px;
+    justify-content: space-between;
+  }
+  
+  /* Cards */
+  .data-group {
+    flex: 1 1 42%; 
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: #ffdada;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+  }
+  
+  .data-group h2 {
+    font-size: 14px;
+    font-weight: 200;
+    margin-bottom: 12px;
+    color: #2563eb;
+  }
+  
+  .data-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .data-item:last-child {
+    border-bottom: none;
+  }
+  
+  .data-item div {
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: #444;
+  }
+  
+  .data-item strong {
+    color: #111;
+  }
+  
